@@ -20,6 +20,6 @@ export class AppComponent implements OnInit{
  }
  
  
- // title = 'proyecto';
+ title = 'proyecto';
 }
 
