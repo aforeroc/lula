@@ -6,6 +6,10 @@
     
 }
 
+.nav-item:hover{
+    text-decoration: underline;
+}
+
 #centrarlogo{
 
     margin-left: auto;
@@ -16,6 +20,12 @@
 #envios{
 
     margin-left: 10px;
+}
+
+#carrito-compras{
+
+    display: flex;
+    flex-direction: row-reverse;
 }
 /**
 

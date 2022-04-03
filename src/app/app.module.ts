@@ -5,21 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { SinformacionModule } from './sinformacion/sinformacion.module';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
+import { LoginModule } from './login/login.module';
+import { RegistroModule } from './registro/registro.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { FormsModule } from '@angular/forms';
+import { TendenciaModule } from './tendencia/tendencia.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    RegistroComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    SinformacionModule
-    
+    SinformacionModule,
+    LoginModule,
+    RegistroModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    FormsModule,
+    TendenciaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
