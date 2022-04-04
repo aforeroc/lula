@@ -5,6 +5,7 @@ import { CaballeroComponent } from './caballero/caballero.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { SinformacionComponent } from './sinformacion/sinformacion.component';
+import { TendenciaComponent } from './tendencia/tendencia.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,21 @@ const routes: Routes = [
 
   },
   
+
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+
+  {
+    path: 'registro',
+    component: RegistroComponent
+  },
+
+  {
+    path: 'tendencia',
+    component: TendenciaComponent
+  }
 
  
 

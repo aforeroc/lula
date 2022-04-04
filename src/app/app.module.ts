@@ -9,10 +9,16 @@ import { LoginModule } from './login/login.module';
 import { RegistroModule } from './registro/registro.module';
 import { SharedModule } from './shared/shared.module';
 import { SinformacionModule } from './sinformacion/sinformacion.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { FormsModule } from '@angular/forms';
+import { TendenciaModule } from './tendencia/tendencia.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +27,7 @@ import { SinformacionModule } from './sinformacion/sinformacion.module';
     SinformacionModule,
     LoginModule,
     RegistroModule,
+    TendenciaModule,
     CaballeroModule,
     HttpClientModule
     

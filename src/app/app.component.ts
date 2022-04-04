@@ -12,7 +12,6 @@ import mapboxgl from 'mapbox-gl';
 export class AppComponent implements OnInit{
  
  
- 
  ngOnInit(): void {
      
   
