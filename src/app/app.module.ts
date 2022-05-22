@@ -10,8 +10,9 @@ import { RegistroModule } from './registro/registro.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TendenciaModule } from './tendencia/tendencia.module';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { TendenciaModule } from './tendencia/tendencia.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule,
     SinformacionModule,
     LoginModule,
     RegistroModule,

@@ -12,7 +12,8 @@ export const environment = {
     messagingSenderId: "337330792745",
     appId: "1:337330792745:web:dd9f73aded2a7da6fd2f38",
     measurementId: "G-L0V8H27RMZ"
-  }
+  },
+  apiUrl: 'http://localhost:9092/lulatto'
 };
 
 
