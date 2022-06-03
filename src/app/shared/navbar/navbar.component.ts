@@ -12,4 +12,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  
+  toggle() {
+    var sidebar = document.querySelector("#sidebar")
+    var container = document.querySelector(".my-container")
+    sidebar?.classList.toggle("active-nav")
+    container?.classList.toggle("active-cont")
+  }
 }

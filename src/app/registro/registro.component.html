@@ -1,104 +1,97 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('../assets/img/3693162.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" id="cuadro">
-
-            <form (ngSubmit)="onSubmit( registroForm )" #registroForm="ngForm" class="login100-form" autocomplete="off">
-
-
+            <form class="login100-form" autocomplete="on">
+                
+                
+               
+                <span class="login100-form-title p-b-49">
+                    <img src="/assets/img/Lulatto_Sin_Fondo.png" alt="" >
+                </span>
 
                 <span class="login100-form-title p-b-49">
-                    <img src="/assets/img/Lulatto_Sin_Fondo.png" alt="">
                     Registro
                 </span>
-                <!-- validacion -->
-                <span *ngIf="registroForm.submitted && registroForm.controls['email'].errors"
-                    class="text-danger animated fadeIn">El correo es obligatorio </span>
-
+                
+                <span class="login100-form-title p-b-49">
+                    {{mensaje}}
+                </span>
+                
                 <div class="wrap-input100 m-b-23">
                     <span class="label-input100">Email</span>
-                    <input class="input100" 
-                        type="email"
-                        name="email"
-                        [(ngModel)]="usuario.email"
-                        required
-                        email
-                        placeholder="Ingrese su email">
-
+                    <input class="input100"
+                           type="email" 
+                           name="email" 
+                           placeholder="Ingrese su email"
+                           [(ngModel)]="cliente.correoElectronico">
                     <span class="focus-input100"></span>
-
                 </div>
-
-                <!-- validacion -->
-                <span *ngIf="registroForm.submitted && registroForm.controls['nombre'].errors"
-                    class="text-danger animated fadeIn">El nombre es obligatorio </span>
 
                 <div class="wrap-input100 m-b-23">
                     <span class="label-input100">Nombre</span>
-                    <input class="input100" 
-                        type="text"
-                        name="nombre" 
-                        [(ngModel)]="usuario.nombre" 
-                        required
-                        placeholder="Ingrese su Nombre">
-
+                    <input class="input100"
+                           type="text" 
+                           name="nombreCliente" 
+                           placeholder="Ingrese su Nombre"
+                           [(ngModel)]="cliente.nombreCliente">
                     <span class="focus-input100"></span>
-
                 </div>
-
-                <!-- validacion -->
-                <span *ngIf="registroForm.submitted && registroForm.controls['apellido'].errors"
-                    class="text-danger animated fadeIn">El apellido es obligatorio </span>
+                
+                <div class="wrap-input100 m-b-23">
+                    <span class="label-input100">Cedula</span>
+                    <input class="input100"
+                           type="text" 
+                           name="cedula" 
+                           placeholder="Ingrese su Nombre"
+                           [(ngModel)]="cliente.cedula">
+                    <span class="focus-input100"></span>
+                </div>
 
                 <div class="wrap-input100 m-b-23">
-                    <span class="label-input100">Apellido</span>
-                    <input class="input100" 
-                        type="text" 
-                        name="apellido" 
-                        [(ngModel)]="usuario.apellido" 
-                        required
-                        placeholder="Ingrese su Apellido">
-
+                    <span class="label-input100">Telefono</span>
+                    <input class="input100"
+                           type="text" 
+                           name="telefono" 
+                           placeholder="Ingrese su telefono"
+                           [(ngModel)]="cliente.telefono">
                     <span class="focus-input100"></span>
                 </div>
-
-                <!-- validacion -->
-                <span *ngIf="registroForm.submitted && registroForm.controls['ciudad'].errors"
-                    class="text-danger animated fadeIn">La ciudad es obligatoria</span>
 
                 <div class="wrap-input100 m-b-23">
-                    <span class="label-input100">Ciudad</span>
-                    <input class="input100" 
-                        type="text" 
-                        name="ciudad" 
-                        required 
-                        [(ngModel)]="usuario.ciudad"
-                        placeholder="Ingrese su Ciudad">
-
+                    <span class="label-input100">Dirección</span>
+                    <input class="input100"
+                           type="text" 
+                           name="direccion"
+                           placeholder="Ingrese su dirección"
+                           [(ngModel)]="cliente.direccion">
                     <span class="focus-input100"></span>
                 </div>
-                <!-- validacion -->
-                <span *ngIf="registroForm.submitted && registroForm.controls['password'].errors"
-                    class="text-danger animated fadeIn">La contraseña es obligatoria y de al menos 5 caracteres </span>
+
+                <div class="wrap-input100 m-b-23">
+                    <span class="label-input100">Password</span>
+                    <input class="input100"
+                           type="password" 
+                           name="password"
+                           placeholder="Ingrese su contraseña"
+                           [(ngModel)]="cliente.password">
+                    <span class="focus-input100"></span>
+                </div>
 
                 <div class="wrap-input100">
-                    <span class="label-input100">Password</span>
-                    <input class="input100" 
-                        type="password" 
-                        name="password" 
-                        [(ngModel)]="usuario.password" 
-                        required
-                        minlength="5" 
-                        placeholder="Ingrese su contraseña">
-
+                    <span class="label-input100">Ciudad</span>
+                    <select class="input100" name="ciudad" [(ngModel)]="cliente.ciudad">
+                        <option selected>Seleccione una ciudad</option>
+                        <option *ngFor="let ciudad of ciudades" value="{{ciudad.idCiudad}}">{{ciudad.nombreCiudad}}</option>
+                    </select>
                     <span class="focus-input100"></span>
                 </div>
-
+                
                 <div class="text-right p-t-8 p-b-31"></div>
-
+                
                 <div class="container-login100-form-btn">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
-                        <button class="login100-form-btn">
+                        <button type="submit" class="login100-form-btn" (click)="registrar()">
                             Sign up
                         </button>
                     </div>

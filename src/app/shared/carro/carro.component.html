@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+    <ul class="navbar-nav d-flex flex-column mt-5 w-100">
+        <div class="b-example-divider"></div>
+        <li class="nav-item w-100">
+
+        </li>
+        <li class="nav-item w-200">
+            <a href="#" class="nav-link text-secondary pl-4 p-2"><i style="color:#000000"
+                    class="fa-solid fa-person-dress fs-4">
+                    <h1>Carrito</h1>
+                </i> </a>
+        </li>
+
+
+
+        <div data-bs-spy="scroll">
+            <ul class="list-group">
+
+
+                <li class="list-group-item" *ngFor="let item of array">
+                    <figure class="figure">
+                        <img src="{{item.imagen}}" height="180px" width="180px" class="figure-img img-fluid rounded"
+                            alt="...">
+                        <h4 class="ms-auto" class="card-title"> {{item.nombre}}</h4>
+                        <h5 class="card-title">{{item.precio | currency:'USD' }}</h5>
+                        <h5 class="card-title"> Total: {{item.precio | currency:'USD'}}</h5>
+                        <button type="button" (click)="eliminarCarrito(item)" class="btn btn-danger">Eliminar</button>
+                        
+                    </figure>
+                    <hr>
+                </li>
+            </ul>
+            <button class="btn btn-primary">
+                Finalizar Compra
+            </button>
+            
+        </div>
+        
+     </ul>
+   <!-- <div *ngFor="let item of array" >
+        <h3>
+            Precio Total: {{item.precio}}
+        </h3>
+    </div> -->
+</nav>

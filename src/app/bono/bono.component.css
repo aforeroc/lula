@@ -1,0 +1,21 @@
+#cardregalo{
+    margin-left: 80px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.texto{
+    margin-top: 25px;
+    margin-bottom: 60px;
+}
+#letrerobono{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#boton{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}

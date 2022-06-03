@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Cliente } from '../models/cliente.models';
 import { UsuarioModel } from '../models/usuario.model';
 import { AuthService } from '../services/auth.service';
+import { ClienteService } from '../services/cliente.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-login',
@@ -11,44 +16,40 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  usuario!:UsuarioModel 
+  loginForm: FormGroup;
+  cliente: Cliente = new Cliente();
 
-  constructor(private auth :AuthService) { }
+  constructor(private router:Router, private clienteService:ClienteService, private _snackBar: MatSnackBar
+    ) { }
 
   ngOnInit(): void {
-    this.usuario = new UsuarioModel();
-
+    this.construirFormularioLogin();
   }
 
-  login(form:NgForm){
-    
-    if(form.invalid){return;}
-    //carga logo error
-    Swal.fire({
-      allowOutsideClick: false,
-      icon:'info',
-      text: 'Espere por favor.. '
+  private construirFormularioLogin() {
+    this.loginForm = new FormGroup({
+      correoElectronico: new FormControl('', Validators.maxLength(40)),
+      password: new FormControl('', Validators.maxLength(16))
     });
-    Swal.showLoading();
-    //
-    
-    this.auth.login(this.usuario).subscribe(resp=>{
-      console.log(resp);
-      Swal.close();
-    }, (err)=>{
-
-    console.log(err.error.error.message);
-
-    Swal.fire({
-      icon:'error',
-      title:'Error al auntenticar',
-      text: err.error.error.message
-    });
-
-
-    });
-
-
   }
+
+  
+  login(): void {
+    const correoFormulario = this.loginForm.controls.correoElectronico.value;
+    const passwordFormulario = this.loginForm.controls.password.value;
+    this.clienteService.login(correoFormulario, passwordFormulario).subscribe(data =>{
+      this.cliente = data;
+      console.log(this.cliente);
+      this.router.navigate(['/']);
+    },
+    error => {
+      this._snackBar.open(error.error, 'x', { duration: 4000, verticalPosition: "top" })
+    }
+    )
+}
+
+
+
+
 
 }

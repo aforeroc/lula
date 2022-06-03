@@ -1,0 +1,75 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalLabel">Producto:</h5> -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <ul class="list-group list-group-flush">
+
+          <li *ngFor="let item of array">
+            <div class="row">
+              <div class="content">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="{{item.imagen}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{item.imagenCarru1}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{item.imagenCarru2}}" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <p class="fs-6">{{item.descripcion}}</p>
+                <h5 class="card-title">{{item.precio | currency:'USD' }}</h5>
+                <div class="input-group mb-3">
+                  <select class="form-select" id="inputGroupSelect02">
+                    <option selected>Talla</option>
+                    <option value="1">36</option>
+                    <option value="2">37</option>
+                    <option value="3">38</option>
+                    <option value="4">39</option>
+                    <option value="5">40</option>
+
+
+                  </select>
+                </div>
+                
+
+
+
+
+              </div>
+
+            </div>
+
+
+          </li>
+
+        </ul>
+
+
+      </div>
+      <div class="modal-footer" *ngFor="let item of array">
+        <button type="button" (click)="mandarAModal(item)"  class="btn btn-primary">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+</div>

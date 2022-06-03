@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Ciudad } from '../models/ciudad.models';
+import { Cliente } from '../models/cliente.models';
 import { UsuarioModel } from '../models/usuario.model';
 import { AuthService } from '../services/auth.service';
+import { CiudadService } from '../services/ciudad.service';
+import { ClienteService } from '../services/cliente.service';
 
 
 @Component({
@@ -12,44 +17,41 @@ import { AuthService } from '../services/auth.service';
 })
 export class RegistroComponent implements OnInit {
 
-  usuario!:UsuarioModel;
+  ciudades:Ciudad[] = [];
+  cliente: Cliente = new Cliente();
+  mensaje: string = "";
 
-  constructor(private auth:AuthService) { }
+
+  constructor(private ciudadservice:CiudadService ,
+              private clienteservice:ClienteService,
+              private router:Router) { }
 
   ngOnInit(): void {
-    this.usuario = new UsuarioModel();
-
+    this.listaCiudades();
   }
 
   onSubmit(form:NgForm){
 
-    if(form.invalid){return;}
-
-    //carga logo error
-    Swal.fire({
-      allowOutsideClick: false,
-      icon:'info',
-      text: 'Espere por favor.. '
-    });
-    Swal.showLoading();
-        //
-        
-
-    this.auth.registrarNuevoUsuario(this.usuario).subscribe(resp=>{
-
-      console.log(resp);
-      Swal.close();
-
-    }, (err)=>{
-      console.log(err.error.error.message);
-
-      Swal.fire({
-        icon:'error',
-        title:'Error al auntenticar',
-        text: err.error.error.message
-      });
-      
-    } );
-
   }
+
+
+  listaCiudades(): void{
+    this.ciudadservice.listaCiudades().subscribe(data =>{
+      data? this.ciudades = data: console.log("No hay ciudades para seleccionar");
+      console.log(data)
+    })
+  }
+
+  registrar(): void{
+    this.clienteservice.addCliente(this.cliente).subscribe(data =>{
+      Swal.fire(
+        '¡Felicitaciones!',
+        'Su registro ha sido exitoso',
+        'success'
+      )
+      this.router.navigate(['/'])
+    })
+  }
+
+
 }

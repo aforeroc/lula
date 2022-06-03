@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl, { Map, Marker } from 'mapbox-gl';
+import { map } from 'rxjs';
 
 
 @Component({
@@ -10,6 +11,8 @@ import mapboxgl from 'mapbox-gl';
 export class SinformacionComponent implements OnInit {
 
   constructor() { }
+  
+  mapa!: mapboxgl.Map;
 
   ngOnInit(): void {
 
@@ -20,6 +23,22 @@ export class SinformacionComponent implements OnInit {
     center: [-76.5299411 ,3.475513], // starting position
     zoom: 15 // starting zoom
     });
+
+    this.crearMarcador(-76.5299411, 3.475513);
+
+  }
+
+
+
+
+  crearMarcador(lng:number,lat:number){
+
+    const marker = new mapboxgl.Marker({
+      draggable: true
+      })
+      .setLngLat([lng ,lat])
+      .addTo(this.mapa);
+
   }
 
 }

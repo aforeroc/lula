@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
+import { CarroComponent } from './carro/carro.component';
 
 
 
@@ -10,7 +11,8 @@ import { WhatsappComponent } from './whatsapp/whatsapp.component';
   declarations: [
     NavbarComponent,
     FooterComponent,
-    WhatsappComponent
+    WhatsappComponent,
+    CarroComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,9 @@ import { WhatsappComponent } from './whatsapp/whatsapp.component';
   exports:[
     FooterComponent,
     NavbarComponent,
-    WhatsappComponent
+    WhatsappComponent,
+    CarroComponent
+
   ]
 })
 export class SharedModule { }
