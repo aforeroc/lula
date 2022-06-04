@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="card" style="width: 30rem;" id="cardregalo">
+                <img src="/assets/img/regalo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Bono de Regalo</h5>
+                    <hr>
+                    <p class="card-text">De: {{bono.nombreRemitente}}</p>
+                    <p class="card-text">Para: {{bono.nombreDestinatario}}</p>
+                    <hr width="60px">
+                    {{bono.mensaje}}
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <h1 class="texto">
+                Bono de Regalo
+                <br>
+                <p class="fs-6">¿No sabes que puedes regalar que le puede gustar? <br><br> Por medio de este bono de
+                    regalo puedes darle el regalo ideal a la persona que mas deseas</p>
+                <h1>
+                    Ingresa un Monto
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">$</span>
+                        <input type="text" class="form-control" placeholder="Monto" aria-label="Monto"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <br>
+                    <p class="fs-4" id="letrerobono">Destinatario.</p>
+
+                    <p class="fs-6">Informacíon de entrega</p>
+                    <p class="fs-6">Nombre:</p>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" placeholder="Nombre Destinatario"
+                            aria-label="NombreDesti" name="nombreDestinatario" [(ngModel)]="bono.nombreDestinatario"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <br>
+                    <p class="fs-6">Correo Destinatario:</p>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" placeholder="correo Destinatario" aria-label="correo"
+                            aria-describedby="addon-wrapping">
+                    </div>
+
+                    <br>
+                    <p class="fs-4" id="letrerobono">Remitente.</p>
+
+                    <p class="fs-6">Nombre:</p>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" placeholder="Nombre Remitente" aria-label="NombreDesti"
+                            name="nombreRemitente" [(ngModel)]="bono.nombreRemitente" aria-describedby="addon-wrapping">
+                    </div>
+                    <br>
+                    <p class="fs-6">Mensaje:</p>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" placeholder="Mensaje" [(ngModel)]="bono.mensaje"
+                            name="mensaje" aria-label="correo" aria-describedby="addon-wrapping">
+
+                    </div>
+
+                </h1>
+            </h1>
+
+            <a href="#" class="btn btn-outline-primary btn-fluid" id="boton">Agregar al carrito</a>
+
+        </div>
+    </div>
+</div>
+<app-whatsapp></app-whatsapp>
+<app-footer></app-footer>

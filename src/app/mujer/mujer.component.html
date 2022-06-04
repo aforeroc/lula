@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row p-5">
+
+        <div *ngFor="let item of productos" class="card m-2" style="width: 18rem;">
+            <img src="{{item.imagen}}" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <h5 class="card-title">{{item.precio | currency:'USD' }}</h5>
+                <button type="button" (click)="mandarAModal(item)" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    class="btn btn-primary">Ver Producto</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-whatsapp></app-whatsapp>
+<app-footer></app-footer>

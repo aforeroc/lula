@@ -13,6 +13,12 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TendenciaModule } from './tendencia/tendencia.module';
 import { HttpClientModule } from "@angular/common/http";
+import { InicioModule } from './inicio/inicio.module';
+import { MujerModule } from './mujer/mujer.module';
+import { VistazapatoModule } from './vistazapato/vistazapato.module';
+import { BonoModule } from './bono/bono.module';
+import { CaballeroModule } from './caballero/caballero.module';
+import { DescuentosModule } from './descuentos/descuentos.module';
 
 
 @NgModule({
@@ -30,7 +36,13 @@ import { HttpClientModule } from "@angular/common/http";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FormsModule,
-    TendenciaModule
+    TendenciaModule,
+    InicioModule,
+    MujerModule,
+    VistazapatoModule,
+    BonoModule,
+    CaballeroModule,
+    DescuentosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

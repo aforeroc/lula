@@ -1,0 +1,16 @@
+.texto{
+    background-color: rgba(240, 194, 46, 0.788);
+    margin-left: 15px;
+    margin-top: 55px;
+    width: 350px;
+    height: 300px;
+    position: fixed;
+
+
+}
+
+.titulo{
+
+    margin-left: 110px;
+    margin-right: auto;
+}
