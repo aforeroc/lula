@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DescuentosComponent } from './descuentos.component';
 import { SharedModule } from '../shared/shared.module';
+import { VistazapatoModule } from '../vistazapato/vistazapato.module';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    VistazapatoModule
   ]
 })
 export class DescuentosModule { }

@@ -20,6 +20,7 @@ export class DescuentosComponent implements OnInit {
         imagen: "../../../assets/img/zapatos/araza.jpg",
         imagenCarru1: "../../../assets/img/prueba.jpg",
         precio: 70000,
+        cantidad:5,
         descuento: "30%"
       },{
         nombre: "Tamarindo",
@@ -28,6 +29,7 @@ export class DescuentosComponent implements OnInit {
         imagenCarru1: "../../../assets/img/zapatos/blanco.jpg",
         imagenCarru2: "../../../assets/img/zapatos/ebano.jpg",
         precio: 85000,
+        cantidad:2,
         descuento: "20%"
       },{
         nombre: "Roble",
@@ -36,6 +38,7 @@ export class DescuentosComponent implements OnInit {
         imagenCarru1: "../../../assets/img/zapatos/blanco.jpg",
         imagenCarru2: "../../../assets/img/zapatos/ebano.jpg",
         precio: 90000,
+        cantidad:7,
         descuento: "20%"
       },{
         nombre: "Cedro",
@@ -43,6 +46,7 @@ export class DescuentosComponent implements OnInit {
         imagen: "../../../assets/img/zapatos/cedro.jpg",
         imagenCarru1: "../../../assets/img/zapatos/ebano.jpg",
         precio: 90000,
+        cantidad:3 ,
         descuento: "30%"
       },
     ]

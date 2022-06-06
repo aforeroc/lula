@@ -36,6 +36,7 @@
                                 <h5 class="card-title">{{item.nombre}}</h5>
                                 <p class="fs-6">{{item.descripcion}}</p>
                                 <h5 class="card-title">{{item.precio | currency:'USD' }}</h5>
+                                <h5 class="fs-6"> cantidad: {{item.cantidad}}</h5>
                                 <div class="input-group mb-3">
                                     <select class="form-select" id="inputGroupSelect02">
                                         <option selected>Talla</option>
@@ -44,6 +45,17 @@
                                         <option value="3">38</option>
                                         <option value="4">39</option>
                                         <option value="5">40</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <select class="form-select" id="inputGroupSelect02">
+                                        <option selected>Numero de Pares</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="2">3</option>
+                                        <option value="2">4</option>
+                                        <option value="2">5</option>
+                        
                                     </select>
                                 </div>
                             </div>
