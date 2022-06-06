@@ -19,9 +19,8 @@ export class CaballeroComponent implements OnInit {
       descripcion: "Una silueta atemporal de inspiración deportiva y detalles retro, elaborada en cuero de brillo sutil, en mezcla con textura minimal. El contraste de color en su suela y sus terminados manuales le dan un toque de valor a tu día a día, siendo un indispensable en tu fondo de armario.",
       imagen: "../../../assets/img/zapatos/almendro.jpg",
       imagenCarru1: "../../../assets/img/prueba.jpg",
+      color:["Almendro Capuccino", "Almendro Carbon","Almendro Navy","Almendro Syrup"],
       cantidad:5,
-
-
       precio: 120000
     }, {
       nombre: "Brandy",
@@ -29,7 +28,7 @@ export class CaballeroComponent implements OnInit {
       imagen: "../../../assets/img/zapatos/brandy.jpg",
       imagenCarru1: "../../../assets/img/zapatos/blanco.jpg",
       cantidad:2,
-
+      color:["Brandy"],
       precio: 120000
     }, {
       nombre: "Ébano",
@@ -37,7 +36,7 @@ export class CaballeroComponent implements OnInit {
       imagen: "../../../assets/img/zapatos/ebano.jpg",
       imagenCarru1: "../../../assets/img/zapatos/blanco.jpg",
       cantidad:6,
-
+      color:["Ébano Carbon", "Ébano Navy"],
       precio: 130000
     }]
 

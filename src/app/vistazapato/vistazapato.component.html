@@ -49,13 +49,18 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <select class="form-select" id="inputGroupSelect02">
+                                        <option selected>Seleccionar color</option>
+                                        <option *ngFor="let item of item.color" value="1">{{item}}</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <select class="form-select" id="inputGroupSelect02">
                                         <option selected>Numero de Pares</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="2">3</option>
                                         <option value="2">4</option>
                                         <option value="2">5</option>
-                        
                                     </select>
                                 </div>
                             </div>

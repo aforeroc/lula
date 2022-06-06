@@ -19,6 +19,7 @@ export class MujerComponent implements OnInit {
       descripcion: "Nuestros Arce son nuestros famosos EVERY DAY SHOES, llamados así precisamente por ser esos zapatos infaltables en tu closet, perfectos para el dia a dia y para cualquier ocasión.",
       imagen: "../../../assets/img/zapatos/cardamomo.jpg",
       cantidad:10,
+      color:["Cardamomo Carbon (Negro)", "Cardamomo Cream (Nude)"],
       imagenCarru1: "../../../assets/img/zapatos/blanco.jpg",
 
       precio: 90000
@@ -27,6 +28,7 @@ export class MujerComponent implements OnInit {
       descripcion: "Los ananá para las más arriesgadas que les gustan los zapatos un poco más deportivos sin perder el estilo, hechos en cuero sintético, perfectos para combinar con un look casual o si prefieres mas formal que le da un toque divertido, disponible en tres referencias Ananá Carbon (negros ), Ananá Snow( Blancos) y Ananá Sparkies (suela de colores).",
       imagen: "../../../assets/img/zapatos/anana.jpg",
       cantidad:8,
+      color:["Ananá Carbon (Negro)", "Ananá Snow (Blancos)","Ananá Sparkies (Suela de colores)"],
       imagenCarru1: "../../../assets/img/zapatos/ebano.jpg",
 
       precio: 90000
@@ -35,6 +37,7 @@ export class MujerComponent implements OnInit {
       descripcion: "Açai, una referencia inspirada en esos sabores deliciosos de las frutas exóticas, disponible en colores basicos que combinan con todo, hechos en cuero sintetico, libre de crueldad animal y con estampados florales y animal print que no pasan de moda, suela en pvc y altura media.",
       imagen: "../../../assets/img/zapatos/acai.jpg",
       cantidad:2,
+      color:["Carbon (Negro)", "Snow (Blanco)","Sunshine (Dorado)"],
       imagenCarru1: "../../../assets/img/zapatos/blanco.jpg",
 
       precio: 90000
